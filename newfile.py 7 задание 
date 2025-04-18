@@ -1,0 +1,19 @@
+class Student:
+    def __init__(self, name):
+        self.name = name
+
+class Teacher:
+    def __init__(self, subject):
+        self.subject = subject
+
+class Assistant(Student, Teacher):
+    def __init__(self, name, subject):
+        Student.__init__(self, name)
+        Teacher.__init__(self, subject)
+    
+    def help_student(self):
+        print(f"{self.name} помогает с {self.subject}")
+
+# Пример использования
+a = Assistant("Катя", "русский")
+a.help_student()

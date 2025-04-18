@@ -1,0 +1,21 @@
+class Student:
+    def __init__(self, name, student_id):
+        self.name = name
+        self.student_id = student_id
+        self.grades = []
+    
+    def add_grade(self, grade):
+        if 0 <= grade <= 10:
+            self.grades.append(grade)
+    
+    def get_average(self):
+        return sum(self.grades)/len(self.grades) if self.grades else 0
+    
+    def __str__(self):
+        return f"{self.name} ({self.student_id})"
+
+# Пример использования
+s = Student("Катя Д", "123")
+s.add_grade(8)
+s.add_grade(9)
+print(s, "Средний:", s.get_average())

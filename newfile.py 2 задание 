@@ -1,0 +1,23 @@
+class Person:
+    def __init__(self, name):
+        self.name = name
+
+class Teacher(Person):
+    def __init__(self, name, subject):
+        super().__init__(name) 
+        self.subject = subject 
+        self.students = []     
+   
+    def add(self, student_name):
+        self.students.append(student_name)
+        print(f"Добавлен студент: {student_name}")
+
+ 
+    def show(self):
+        print(f"Студенты {self.name}: {', '.join(self.students)}")
+
+# Пример использования
+t = Teacher("Иван Евгеньевич", "Биология")
+t.add("Катя")
+t.add("Оля")
+t.show()
