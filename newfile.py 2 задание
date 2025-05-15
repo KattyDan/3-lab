@@ -1,0 +1,23 @@
+class Person:
+    def __init__(self, name): #конснструктор person. принимает имя
+        self.name = name
+
+class Teacher(Person):
+    def __init__(self, name, subject): #конструктор teacher
+        super().__init__(name) #кон person для инициализации имя
+        self.subject = subject #предмет преподавания
+        self.students = []     
+   
+    def add(self, student_name): #метод добавление студента в список
+        self.students.append(student_name)
+        print(f"Добавлен студент: {student_name}") #вывод уведовмления о дабавении
+
+ 
+    def show(self): #метод отображения списка студ
+        print(f"Студенты {self.name}: {', '.join(self.students)}") #имя учителя и список студент через ,
+
+# Пример использования
+t = Teacher("Иван Евгеньевич", "Биология")
+t.add("Катя")
+t.add("Оля")
+t.show()
