@@ -1,0 +1,17 @@
+class BankAccount: 
+    def __init__(self):
+        self._balance = 0 #имя отрибута с одним подчеркаванием
+        self._transactions = [] #имя отребута для хранения истории . 
+    
+    def deposit(self, amount): #сумма для пополнения , толтко полож чис
+        self._balance += amount #увелечени
+        self._transactions.append(f"+{amount}") #метод списка для доб элемент. f строка подс знач amount
+    
+    @property #геттер декоратор для создания свойств
+    def balance(self): #имя свойства (геттера)
+        return self._balance #возвращение значения,
+
+# Пример использования
+acc = BankAccount()
+acc.deposit(100)
+print("Баланс:", acc.balance)
