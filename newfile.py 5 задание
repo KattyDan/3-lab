@@ -1,0 +1,16 @@
+class Student:
+    def __init__(self, name, student_id):
+        self.name = name #создает атрибут name и присваевает знач параметра
+        self.student_id = student_id #создание атрибуса с уникальным идентификатором
+    
+    def __eq__(self, other): #метод для сравнения обьектов 
+        return self.student_id == other.student_id #сравнение студентов, true если id совпадают
+    
+    def __len__(self): #метод для работы с функцией
+        return len(self.name) #возвр длину имени студента
+
+# Пример использования
+s1 = Student("Катя", "123")
+s2 = Student("Оля", "123")
+print(s1 == s2)  # True (сравниваем по ID)
+print(len(s1))   # 3 (длина имени)
