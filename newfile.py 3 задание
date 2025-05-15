@@ -1,0 +1,23 @@
+from math import pi #импорт конкретного обьекта из модуля math
+
+class Shape: #абстрактный класс для всез фигур
+    def area(self): pass #абстр метод площади , отсутсвте реализации
+    def perimeter(self): pass
+
+class Rectangle(Shape):
+    def __init__(self, w, h): # конструктор прям, ширина высота
+        self.w = w
+        self.h = h
+    def area(self): return self.w * self.h #реализация метода площади шир высота
+    def perimeter(self): return 2*(self.w + self.h)
+
+class Circle(Shape):
+    def __init__(self, r):
+        self.r = r
+    def area(self): return pi * self.r**2 #площадь
+    def perimeter(self): return 2 * pi * self.r #длина окр
+
+# Пример использования
+shapes = [Rectangle(4, 5), Circle(3)]
+for s in shapes:
+    print(f"Площадь: {s.area():.1f}")
