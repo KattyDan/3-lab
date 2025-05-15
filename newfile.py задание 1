@@ -1,17 +1,17 @@
 class Student:
-    def __init__(self, name, student_id):
-        self.name = name
-        self.student_id = student_id
-        self.grades = []
+    def __init__(self, name, student_id): #констуктор, вызывается при создании обьекта
+        self.name = name #создание атрибута у обьекта и прислоение значения из параметров name
+        self.student_id = student_id #сохранение айди
+        self.grades = [] #пустой спик для оценок
     
-    def add_grade(self, grade):
-        if 0 <= grade <= 10:
-            self.grades.append(grade)
+    def add_grade(self, grade): #метод для добавления оценки
+        if 0 <= grade <= 10: 
+            self.grades.append(grade) #добавление оценки в список
     
-    def get_average(self):
-        return sum(self.grades)/len(self.grades) if self.grades else 0
+    def get_average(self): #средний балл
+        return sum(self.grades)/len(self.grades) if self.grades else 0 #возвращает среднее значение или 0
     
-    def __str__(self):
+    def __str__(self): #строковое представление обьекта
         return f"{self.name} ({self.student_id})"
 
 # Пример использования
