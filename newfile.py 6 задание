@@ -1,0 +1,21 @@
+class Temperature:
+    def __init__(self): #конструктор класса
+        self._celsius = 0 # 0 по умолчанию
+    
+    @property #декораток для создания свойства геттреа
+    def celsius(self): # геттер
+        return self._celsius 
+    
+    @celsius.setter #сеттер
+    def celsius(self, value): #декор для соз свой сеттера
+        if -273 <= value <= 1000: #проверка что значения в допус списке
+            self._celsius = value
+    
+    @property
+    def fahrenheit(self): #геттер
+        return self._celsius * 9/5 + 32
+
+# Пример использования
+t = Temperature()
+t.celsius = 29
+print(f"29°C = {t.fahrenheit}°F")
